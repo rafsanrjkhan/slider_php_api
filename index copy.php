@@ -77,7 +77,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-        </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

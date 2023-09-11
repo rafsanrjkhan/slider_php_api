@@ -13,7 +13,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-primary bg-dark text-primary">
-<div class="container-fluid">
+  <div class="container-fluid">
             <a class="navbar-brand" href="#">Pondit</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,30 +46,54 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             </div>
-        </div>
+  </div>
 </nav>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <?php
-        $imageFiles = glob('uploads/*');
-        foreach ($imageFiles as $index => $imageFile) {
-            $activeClass = ($index === 0) ? 'active' : '';
-            echo '<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="' . $index . '" class="' . $activeClass . '"></button>';
-        }
-        ?>
-    </div>
-    <div class="carousel-inner">
-        <?php
-        foreach ($imageFiles as $index => $imageFile) {
-            $activeClass = ($index === 0) ? 'active' : '';
-            echo '<div class="carousel-item ' . $activeClass . '">';
-            echo '<img src="' . $imageFile . '" class="d-block w-100" alt="Image ' . $index . '">';
-            echo '</div>';
-        }
-        ?>
-    </div>
-    <!-- Rest of your carousel code remains the same -->
+       <!-- <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="uploads/bd img.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="uploads/ind img.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="uploads/pk img.jpg" class="d-block w-100" alt="...">
+        </div> -->
+        
+        <div class="carousel-indicators">
+            <?php
+            $imageFiles = glob('uploads/*');
+            foreach ($imageFiles as $index => $imageFile) {
+                $activeClass = ($index === 0) ? 'active' : '';
+                echo '<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="' . $index . '" class="' . $activeClass . '"></button>';
+            }
+            ?>
+       </div>
+
+       <div class="carousel-inner">
+            <?php
+            foreach ($imageFiles as $index => $imageFile) {
+                $activeClass = ($index === 0) ? 'active' : '';
+                echo '<div class="carousel-item ' . $activeClass . '">';
+                echo '<img src="' . $imageFile . '" class="d-block w-100" alt="Image ' . $index . '">';
+                echo '</div>';
+            }
+            ?>
+      </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
 </div>
 
 <!-- Bootstrap JS -->
